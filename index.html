@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <title>Task 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="myBody" class="section-div">
+
+        <div class="top-container">
+            <form id="myForm" class="form-class">
+                <div class="input-div">
+                    <label>Name: </label>
+                    <input type="text" name="name" id="name" required placeholder="Name">
+                </div>
+
+                <div class="input-div">
+                    <label>Gender: </label>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label>Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label>Female</label>
+                </div>
+
+                <div class="input-div">
+
+                    <label>Tech: </label>
+                    <select id="tech" name="tech">
+                        <option value="React-native" selected>React-native</option>
+                        <option value="ROR">React JS</option>
+                        <option value="vue-jS">Vue JS</option>
+                        <option value="flutter">iOS Development</option>
+                        <option value="flutter">Fluttter</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-div">
+
+                    <input type="checkbox" id="termsncond" name="termsncond" value="termsncond">
+                    <label>I agree to Terms and Condition</label>
+
+                </div>
+
+                <div class="input-div">
+
+                    <input type="button" onclick="getData()" name="submit" value="Submit">
+
+                </div>
+
+            </form>
+
+            <textarea id="eventHistory" class="events-history">Events will be display here...</textarea>
+
+        </div>
+
+        <div class="table-container">
+
+            <table id="table">
+
+                <tr class="table-row">
+
+                    <th class="table-heading-col">
+                        Name
+                        </td>
+
+                    <th class="table-heading-col">
+                        Gender
+                        </td>
+
+                    <th class="table-heading-col">
+                        Tech
+                        </td>
+
+                    <th class="table-heading-col">
+                        Verify
+                        </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+<script>
+    myBody.click = myBody.mousedown = myBody.mouseup = myBody.onmouseover = myBody.onmouseout = handler;
+
+function handler(events) {
+    function str(elm) {
+        if (!elm) return "null";
+        return elm.className || elm.tagName;
+    }
+
+    eventHistory.value += events.type + " on " + str(events.target) + "\n";
+    eventHistory.scrollTop = eventHistory.scrollHeight;
+
+}
+
+function getData() {
+    var row = document.createElement("tr");
+    var col1 = document.createElement("td");
+    var col2 = document.createElement("td");
+    var col3 = document.createElement("td");
+    var col4 = document.createElement("td");
+
+    row.appendChild(col1);
+    row.appendChild(col2);
+    row.appendChild(col3);
+    row.appendChild(col4);
+    table.appendChild(row);
+
+
+    col1.innerHTML = document.querySelector("input[name=name]").value;
+    col2.innerHTML = document.querySelector("input[name=gender]:checked").value;
+    col3.innerHTML = document.querySelector("#tech").value;
+    var ageCheck = document.querySelector("#termsncond:checked");
+    if (ageCheck != null) {
+        col4.innerHTML = verifyCheck.value;
+    }
+    else {
+        col4.innerHTML = "Not verified";
+    }
+
+    document.forms[0].reset();
+
+}
+</script>
+
+</body>
+
+</html>

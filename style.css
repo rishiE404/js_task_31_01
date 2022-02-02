@@ -1,0 +1,55 @@
+.top-container {
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-div {
+    margin: 8px 0px;
+    font-family: Gadugi;
+    font-size: 20px;
+}
+
+input,
+select {
+    font-family: Gadugi;
+    font-size: 18px;
+}
+
+textarea {
+    width: 50%;
+    overflow-y: scroll;
+    resize: none;
+    text-align: left;
+    padding: 8px;
+}
+
+table {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.table-row {
+    font-family: Gadugi;
+    font-size: 20px;
+}
+
+.table-heading-col {
+    font-style: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #c6e7f5;
+}
+
+td {
+    font-family: Gadugi;
+    font-size: 18px;
+}
+
+th,
+td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding: 2px 4px;
+}
